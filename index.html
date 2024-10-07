@@ -4,39 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaku29</title>
+    <!-- Import ikon Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Ustawienia globalne */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1b1b1b; /* Ciemne tło */
+            color: #eaeaea; /* Jasny kolor tekstu */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff007f; /* Różowy kolor */
+            margin: 20px 0;
             text-align: center;
         }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #eaeaea; /* Jasny kolor tekstu */
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .section {
-            font-size: 24px;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #2a2a2a; /* Ciemniejsze tło dla sekcji */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .social-links, .email {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff007f; /* Różowy kolor dla tytułów */
             margin-bottom: 20px;
         }
-        .social-links {
-            font-size: 18px;
+
+        .social-links a {
+            display: block; /* Wyświetlanie każdego linku w osobnym wierszu */
+            color: #ff007f; /* Różowy kolor dla linków */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 10px;
+            margin: 10px 0; /* Dodanie odstępu między linkami */
+            border: 1px solid #ff007f; /* Dodanie obramowania linkom */
+            border-radius: 5px;
         }
-        .email {
-            font-size: 18px;
+
+        .social-links a:hover {
+            color: #fff;
+            background-color: #ff007f; /* Tło różowe przy najechaniu */
         }
+
+        .social-links a i {
+            margin-right: 8px; /* Odstęp dla ikon */
+        }
+
         .footer {
-            font-size: 14px;
+            font-size: 0.9rem;
+            padding: 10px;
+            background-color: #000; /* Czarny kolor stopki */
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            margin-top: auto; /* Ustawienie stopki na dole */
+        }
+
+        /* Styl responsywny dla urządzeń mobilnych */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .social-links a {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Zaku29</h1>
-    <p>Witaj na mojej stronie, która w przyszłości będzie rozwijana.</p>
-    <p>Znajdziesz tutaj kilka przydatnych informacji :D</p>
-    <div class="section">
-        <p class="social-links">ZNJDZIESZ MNIE TUTAJ</p>
-        <a href="https://www.facebook.com/profile.php?id=100015531846938"target="_blank" >Facebook</a>   <a href="https://www.instagram.com/zaku.29/"target="_blank" >Instagram</a>   <a href="https://www.linkedin.com/in/lukasz-zakowicz/"target="_blank">LinkedIn</a>
-    </div><br>
-    <div class="section">
-        <p class="email">NAPISZ DO MNIE</p>
-        <p>zakowiczlukasz@wp.pl</p>
-        <p>admin@zaku29.tech</p>
-    </div><br>
-    <p class="footer">Witaj na Zaku29.tech</p>
+    <div class="container">
+        <h1><a href="#" style="text-decoration: none; color: #ff007f;">Zaku29</a></h1> <!-- Dodany link do nagłówka -->
+        <p>Witaj na mojej stronie, która w przyszłości będzie rozwijana.</p>
+        <p>Znajdziesz tutaj kilka przydatnych informacji :D</p>
+        
+        <div class="section">
+            <p class="social-links">ZNJDZIESZ MNIE TUTAJ</p>
+            <a href="https://www.facebook.com/profile.php?id=100015531846938" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+            <a href="https://www.instagram.com/zaku.29/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://www.linkedin.com/in/lukasz-zakowicz/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+        </div>
+
+        <div class="section">
+            <p class="email">NAPISZ DO MNIE</p>
+            <p>zakowiczlukasz@wp.pl</p>
+            <p>admin@zaku29.tech</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Witaj na zaku29.tech</p>
+    </div>
+
+    <!-- Dodanie ikon Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>

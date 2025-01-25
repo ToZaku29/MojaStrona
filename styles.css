@@ -109,7 +109,7 @@ section {
 }
 
 #hero {
-  background: linear-gradient(to right, #1e1e1e, #121212);
+  background: linear-gradient(to right, rgba(18, 18, 18, 0), #1e1e1e, #121212);
   padding: 8rem 2rem;
 }
 

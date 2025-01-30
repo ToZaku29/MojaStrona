@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaku29.tech</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#" class="brand" onclick="location.reload()">Zaku29</a>
+    <ul class="sidebar-menu">
+      <li><a href="#home" id="home-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#" id="photo-gallery-link"><i class="fas fa-images"></i> Photo Gallery</a></li>
+      <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+      <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+    </ul>
+  </div>
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#social">Social Media</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section id="hero">
+      <h1>Welcome to Zaku29.tech</h1>
+      <p>Your future-focused platform for creativity and innovation.</p>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About</h2>
+      <p>Welcome to my website, which will be developed in the future. Here you'll find some useful information :D</p>
+    </section>
+    <!-- Social Media Section -->
+    <section id="social">
+      <h2>Find Me Here</h2>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100015531846938" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/zaku.29/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/lukasz-zakowicz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out:</p>
+      <div class="contact-info">
+        <a href="mailto:zakowiczlukasz@wp.pl">zakowiczlukasz@wp.pl</a>
+        <a href="mailto:admin@zaku29.tech">admin@zaku29.tech</a>
+      </div>
+    </section>
+    <!-- Photo Gallery Section -->
+    <section id="photo-gallery" style="display: none;">
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="images/photo1.jpg" alt="Photo 1" onclick="openModal(this.src)">
+        <img src="images/photo2.jpg" alt="Photo 2" onclick="openModal(this.src)">
+        <img src="images/photo3.jpg" alt="Photo 3" onclick="openModal(this.src)">
+        <!-- Dodaj więcej zdjęć tu -->
+      </div>
+      <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+      </div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog" style="display: none;">
+      <h2>Blog</h2>
+      <div class="blog-post">
+        <h3>First Post Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <a href="#" class="read-more">Read more...</a>
+      </div>
+      <div class="blog-post">
+        <h3>Second Post Title</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <a href="#" class="read-more">Read more...</a>
+      </div>
+      <!-- Dodaj więcej postów tu -->
+    </section>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Zaku29.tech. All rights reserved.</p>
+    </footer>
+  </div>
+  <!-- Optional: Smooth Refresh Script -->
+  <script>
+    document.querySelector('.brand').addEventListener('click', function(e) {
+      e.preventDefault();
+      location.reload();
+    });
+
+    // Funkcja dla Photo Gallery
+    const photoGalleryLink = document.getElementById('photo-gallery-link');
+    photoGalleryLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const password = prompt("Wprowadź hasło dostępu:");
+      
+      if(password === "Zakowicz2006") {
+        // Przewiń do sekcji Photo Gallery i pokaż ją
+        document.getElementById('photo-gallery').style.display = 'block';
+        document.getElementById('photo-gallery').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert("Nieprawidłowe hasło!");
+      }
+    });
+
+    // Funkcje dla modala galerii zdjęć
+    function openModal(src) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    // Funkcje dla nawigacji w górnym menu
+    document.querySelectorAll('header nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Funkcje dla nawigacji w bocznym menu
+    document.querySelectorAll('.sidebar-menu a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        if (targetId === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Inicjalizacja strony - pokazanie sekcji Home
+    document.getElementById('hero').style.display = 'block';
+  </script>
+</body>
+</html>
